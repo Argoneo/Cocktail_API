@@ -314,7 +314,7 @@ footer p {
 /* ================================
    Responsive Breakpoints
 ================================== */
-@media (max-width: 1280px) {
+@media (max-width: 1920px) {
 
    #images {
       width: 100%;
