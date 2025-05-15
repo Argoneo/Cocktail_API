@@ -6,7 +6,13 @@ const app = express();
 const port = 3000;
 
 app.use(bodyParser.urlencoded({extended: true}));
-app.use(express.static('public'));
+app.use(express.static('public', {
+  etag: false,
+  maxAge: 0,
+  setHeaders: (res, path) => {
+    res.setHeader('Cache-Control', 'no-store');
+  }
+}));
 
 // Landing page
 app.get("/",(req,res)=>{
